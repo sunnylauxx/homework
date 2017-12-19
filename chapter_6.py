@@ -30,7 +30,7 @@ def test_suite():
     test(day_num("Sunday") == 0)
     test(day_num(day_name(3)) == 3)
     test(day_name(day_num("Thursday")) == "Thursday")
-    test(day_num("Halloween") == "None")
+    test(day_num("Halloween") == None)
     
     print("\nday_add")
     test(day_add("Monday", 4) ==  "Friday")
@@ -168,6 +168,13 @@ def is_factor(f,n):
         return True
     else:
         return False
+    
+def is_multiple(m,n):
+    if is_factor(n,m) == True:
+        return True
+    else:
+        return False    
+
     
 def f2c(t):
     a = float(t) - 32
