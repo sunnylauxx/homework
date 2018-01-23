@@ -41,6 +41,29 @@ def test_suite():
     test(day_add("Sunday", -7) == "Sunday")
     test(day_add("Tuesday", -100) == "Sunday")
     
+    print("\ndays_in_month")
+    test(days_in_month("February") == 28)
+    test(days_in_month("December") == 31)
+    
+    print("\nto_secs")
+    test(to_secs(2, 30, 10) == 9010)
+    test(to_secs(2, 0, 0) == 7200)
+    test(to_secs(0, 2, 0) == 120)
+    test(to_secs(0, 0, 42) == 42)
+    test(to_secs(0, -10, 10) == -590)
+    test(to_secs(2.5, 0, 10.71) == 9010)
+    test(to_secs(2.433,0,0) == 8758)
+    
+    print("\nhours_in")
+    test(hours_in(9010) == 2)
+    
+    print("\minutes_sec")
+    #test(minutes_in(9010) == 30)
+
+    print("\nseconds_in")
+    #test(seconds_in(9010) == 10)
+# thx Hunter 
+    
     
     print("is_even")
     

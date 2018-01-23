@@ -123,7 +123,7 @@ house = [(270,50), (30, 50), (120,50), (120,50), (225,70.1), (225,50), (225,70.1
 for (angle,moves) in house:
     fun.right(angle)
     fun.forward(moves)
-
+#thx Hunter https://github.com/ForestMilles/homework/blob/master/Chapter7.py from Hunter. 
 
 
 print(count_odd(mylist))
