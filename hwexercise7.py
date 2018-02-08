@@ -10,7 +10,7 @@ def test(did_pass):
     print(msg)
 
 
-def reserve(word):
+def reverse(word):
     reversed = ""
     for i in range(len(word) -1, -1, -1):
         reversed += word[i]
