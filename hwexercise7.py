@@ -1,10 +1,30 @@
-from test import testEqual
-def reverse(astring):
-    bstring = ""
-    for i in range(len(astring) -1, -1, -1):
-        bstring = bstring + astring[i]
-    return bstring
+import sys
 
-testEqual(reverse("happy"), "yppah")
-testEqual(reverse("Python"), "nohtyP")
-testEqual(reverse(""),"")
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno   # Get the caller's line number.
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
+
+
+def test_suit():
+    test(reverse("happy") == "yppah")
+    test(reverse("Python") == "nohtyP")
+    test(reverse("") == "")
+    test(reverse("a") == "a")
+
+
+
+def reserve(word):
+    reversed = ""
+    for i in range(len(word) -1, -1, -1):
+        reversed += word[i]
+    return reversed
+
+
+
+
+
