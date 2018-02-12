@@ -1,13 +1,26 @@
-from test import testequal
-def mirror(input):
-    return input + input[::-1]
+import sys
+def test(did_pass):
+    """  Print the result of a test.  """
+    linenum = sys._getframe(1).f_lineno
+    if did_pass:
+        msg = "Test at line {0} ok.".format(linenum)
+    else:
+        msg = ("Test at line {0} FAILED.".format(linenum))
+    print(msg)
 
+def mirror(word):
+    rw=""
+    n=0
+    while n < len(word):
+        ch=word[len(word)-1-n]
+        n += 1
+        rw+=ch
+    mirror_word=word+rw
+    return mirror_word
 
-text = raw_input("Type the string you would like to reverse.")
-print("Here is your string, with its mirror: " + mirror(text))
+test(mirror("good") == "gooddoog")
+test(mirror("Python") == "PythonnohtyP")
+test(mirror("") == "")
+test(mirror("a") == "aa")
 
-print("Tests:")
-testEqual(mirror('good'),'gooddoog')
-testEqual(mirror('Python'),'PythonnohtyP')
-testEqual(mirror(''), '')
-testEqual(mirror('a'),'aa')
+#thxLeo
